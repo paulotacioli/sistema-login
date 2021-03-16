@@ -25,8 +25,6 @@ package com.educandoweb.couse.entities;
 		
 		private String senha;
 
-		private int aprovado;
-
 		@JsonIgnore
 		@OneToOne
 		@MapsId
@@ -37,10 +35,9 @@ package com.educandoweb.couse.entities;
 			
 		}
 		
-		public Login(String senha, int aprovado, Funcionario funcionario) {
+		public Login(String senha, Funcionario funcionario) {
 			super();
 			this.senha = senha;
-			this.aprovado = aprovado;
 			this.funcionario = funcionario;
 		}
 		

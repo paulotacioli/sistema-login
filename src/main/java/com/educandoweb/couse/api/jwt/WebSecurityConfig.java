@@ -68,8 +68,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.POST)
 			.permitAll()
 				
-			.antMatchers(HttpMethod.GET)
-			.permitAll()
+			.antMatchers(HttpMethod.GET, "/funcionarios")
+			
+			.hasAuthority("ROLE_USUARIO")
 				
 			.antMatchers(HttpMethod.PUT)
 			.permitAll()

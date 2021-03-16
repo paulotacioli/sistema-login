@@ -52,8 +52,11 @@ public class JwtAuthenticationController {
 		System.out.println("Aqui entrou authenticate1 (long cpf, string senha)");
 		
 		try {
+			
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(cpf, senha));
-
+			
+			
+			
 		} catch (DisabledException e) {
 
 			throw new Exception("USER_DISABLED", e);
@@ -61,7 +64,8 @@ public class JwtAuthenticationController {
 		} catch (BadCredentialsException e) {
 			throw new UsuarioInvalidoException("");
 		} catch (RuntimeException e) {
-			throw new ErroNaoMapeadoException ("");
+			e.printStackTrace();
+//			throw new ErroNaoMapeadoException ("");
 		}
 	}
 }

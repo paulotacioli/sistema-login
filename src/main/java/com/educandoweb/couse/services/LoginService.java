@@ -51,17 +51,16 @@ public class LoginService implements UserDetailsService {
 		  
 		  System.out.println("TEMOS 40:"+ login.getId().toString());
 
-		    UserBuilder builder = null;
-		    if (login != null) {
+		  UserBuilder builder = null;
+		  if (login != null) {
 		      builder = org.springframework.security.core.userdetails.User.withUsername(username);
 		      builder.password(login.getSenha());
 		      
+		      builder.roles("USUARIO");
+		      
 		    } else {
-		      throw new UsernameNotFoundException("Usuario nao encontrado!");
+		      throw new UsernameNotFoundException("User not found.");
 		    }
-		    
-		    System.out.println("TEMOS 41:"+ builder.toString());
-		    System.out.println("TEMOS 41:"+ builder.build().toString());
 
 		    return builder.build();
 		  }
