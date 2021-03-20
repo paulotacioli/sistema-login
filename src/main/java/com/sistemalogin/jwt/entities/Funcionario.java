@@ -37,6 +37,7 @@ public class Funcionario implements Serializable {
 	@NotEmpty
 	private String email;
 	
+	
 	@NotEmpty
 	private String celular;
 	
